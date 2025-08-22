@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    async function updateMessage() {
+        const message = await fetch('http://192.168.226.178:3000/api/teste');
+        const data = await message.text();
+        document.body.innerHTML = `<h1>${data}</h1>`;
+    }
+    setInterval(updateMessage, 500);
+</script>
+</html>
